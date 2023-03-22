@@ -1,0 +1,24 @@
+query Collection {
+  collection(id: "gid://shopify/Collection/429512622102") {
+    id
+    handle
+    title
+    description
+    image {
+      id
+      url
+    }
+    products(first: 3) @paginate {
+      edges {
+        node {
+            id
+            title
+            featuredImage {
+                id
+                url
+            }
+        }
+      }
+    }
+  }
+}

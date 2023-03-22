@@ -1,0 +1,21 @@
+query ProductDetail($id: ID!) {
+  product(id: $id) {
+    ...ProductFullInfo
+    variants(first: 3) {
+      edges {
+        cursor
+        node {
+          id
+          title
+          image {
+            url
+          }
+          price {
+            amount
+            currencyCode
+          }
+        }
+      }
+    }
+  }
+}
